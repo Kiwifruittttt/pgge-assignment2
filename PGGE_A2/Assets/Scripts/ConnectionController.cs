@@ -19,6 +19,9 @@ namespace PGGE
             public GameObject mBtnJoinRoom;
             public GameObject mInpPlayerName;
 
+            public AudioSource audioSource;
+            public GameObject mBtnBack;
+
             bool isConnecting = false;
 
             void Awake()
@@ -34,10 +37,14 @@ namespace PGGE
             void Start()
             {
                 mConnectionProgress.SetActive(false);
+                DontDestroyOnLoad(audioSource);
             }
 
             public void Connect()
             {
+                audioSource.Play();
+                mBtnBack.SetActive(false);
+
                 mBtnJoinRoom.SetActive(false);
                 mInpPlayerName.SetActive(false);
                 mConnectionProgress.SetActive(true);
@@ -103,6 +110,7 @@ namespace PGGE
             public void OnClickBack()
             {
                 SceneManager.LoadScene("Menu");
+                audioSource.Play();
             }
         }
     }
