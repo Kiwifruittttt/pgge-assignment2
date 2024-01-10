@@ -42,7 +42,7 @@ namespace PGGE
 
             public void Connect()
             {
-                audioSource.Play();
+                audioSource.Play(); //Play button click sound when button is clicked
                 mBtnBack.SetActive(false);
 
                 mBtnJoinRoom.SetActive(false);
@@ -110,7 +110,7 @@ namespace PGGE
             public void OnClickBack()
             {
                 SceneManager.LoadScene("Menu");
-                audioSource.Play();
+                audioSource.Play(); //Play click sound when button is clicked
             }
         }
     }
