@@ -19,7 +19,8 @@ namespace PGGE
             public GameObject mBtnJoinRoom;
             public GameObject mInpPlayerName;
 
-            public AudioSource audioSource;
+            public AudioSource audioSource1;
+            public AudioSource audioSource2;
             public GameObject mBtnBack;
 
             bool isConnecting = false;
@@ -37,12 +38,13 @@ namespace PGGE
             void Start()
             {
                 mConnectionProgress.SetActive(false);
-                DontDestroyOnLoad(audioSource);
+                DontDestroyOnLoad(audioSource1);
+                DontDestroyOnLoad(audioSource2);
             }
 
             public void Connect()
             {
-                audioSource.Play(); //Play button click sound when button is clicked
+                PlaySound(); //Play button click sound when button is clicked
                 mBtnBack.SetActive(false);
 
                 mBtnJoinRoom.SetActive(false);
@@ -110,7 +112,19 @@ namespace PGGE
             public void OnClickBack()
             {
                 SceneManager.LoadScene("Menu");
-                audioSource.Play(); //Play click sound when button is clicked
+                PlaySound(); //Play click sound when button is clicked
+            }
+
+            public void PlaySound()
+            {
+                if (Random.Range(0, 2) == 0)
+                {
+                    audioSource1.Play();
+                }
+                else
+                {
+                    audioSource2.Play();
+                }
             }
         }
     }
