@@ -22,12 +22,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             randomSpawnTransform.rotation,
             0);
 
-        mThirdPersonCamera = Camera.main.gameObject.AddComponent<ThirdPersonCamera>();
-
-        //mPlayerGameObject.GetComponent<PlayerMovement>().mFollowCameraForward = false;
-        mThirdPersonCamera.mPlayer = mPlayerGameObject.transform;
-        mThirdPersonCamera.mDamping = 20.0f;
-        mThirdPersonCamera.mCameraType = CameraType.Follow_Track_Pos_Rot;
+        CameraSetUp();
     }
 
     public void LeaveRoom()
@@ -42,4 +37,13 @@ public class PlayerManager : MonoBehaviourPunCallbacks
         SceneManager.LoadScene("Menu");
     }
 
+    public void CameraSetUp()
+    {
+        mThirdPersonCamera = Camera.main.gameObject.AddComponent<ThirdPersonCamera>();
+
+        //mPlayerGameObject.GetComponent<PlayerMovement>().mFollowCameraForward = false;
+        mThirdPersonCamera.mPlayer = mPlayerGameObject.transform;
+        mThirdPersonCamera.mDamping = 20.0f;
+        mThirdPersonCamera.mCameraType = CameraType.Follow_Track_Pos_Rot;
+    }
 }
