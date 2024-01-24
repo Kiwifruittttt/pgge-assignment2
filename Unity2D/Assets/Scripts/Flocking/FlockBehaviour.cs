@@ -118,10 +118,10 @@ public class FlockBehaviour : MonoBehaviour
     return (a1.transform.position - a2.transform.position).magnitude;
   }
 
-  void Execute(Flock flock, int i)
+  void Execute(Flock flock, int i)  //This might be the problem for optimisation
   {
     Vector3 flockDir = Vector3.zero;
-    Vector3 separationDir = Vector3.zero;
+    Vector3 separationDir = Vector3.zero;   //Idk what any of this is
     Vector3 cohesionDir = Vector3.zero;
 
     float speed = 0.0f;
@@ -179,9 +179,9 @@ public class FlockBehaviour : MonoBehaviour
   }
 
 
-  IEnumerator Coroutine_Flocking()
+  IEnumerator Coroutine_Flocking()  //And this lol
   {
-    while (true)
+    while (true)    //Too many if and for statements?
     {
       if (useFlocking)
       {
