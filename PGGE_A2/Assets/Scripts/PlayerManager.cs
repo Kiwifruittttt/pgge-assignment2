@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviourPunCallbacks
             randomSpawnTransform.rotation,
             0);
 
-        CameraSetUp();
+        CameraSetUp();  //Set up the camera once the scene loads
     }
 
     public void LeaveRoom()

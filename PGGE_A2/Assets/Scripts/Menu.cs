@@ -30,7 +30,7 @@ public class Menu : MonoBehaviour
 
     public void OnClickMultiPlayer()
     {
-        PlaySound();
+        PlaySound();    //
         //Debug.Log("Loading multiplayer game");
         SceneManager.LoadScene("Multiplayer_Launcher");
     }
@@ -39,7 +39,7 @@ public class Menu : MonoBehaviour
     {
         if (Random.Range(0, 2) == 0)
         {
-            audioSource1.Play();
+            audioSource1.Play();    //Randomises which sound to play on click
         }
         else
         {

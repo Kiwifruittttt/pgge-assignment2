@@ -119,7 +119,7 @@ namespace PGGE
             {
                 if (Random.Range(0, 2) == 0)
                 {
-                    audioSource1.Play();
+                    audioSource1.Play();    //Randomises which sound to play on click
                 }
                 else
                 {
